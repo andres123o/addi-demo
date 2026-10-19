@@ -29,12 +29,15 @@ export function Panel({ inicial = "resumen" }: { inicial?: Vista }) {
   return (
     <div className="min-h-dvh w-full bg-lienzo text-texto">
       <header className="sticky top-0 z-30 border-b border-linea bg-fondo/90 backdrop-blur-md">
-        <div className="flex h-16 w-full items-center gap-6 px-4 sm:px-6">
+        <div className="flex h-16 w-full items-center justify-between gap-6 pl-4 pr-3 sm:pl-8 sm:pr-4">
           <Link href="/" className="flex shrink-0 items-center gap-2.5 rounded-control outline-none focus-visible:shadow-[var(--anillo-foco)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/addi/addi.svg" alt="Addi" width={84} height={33} className="h-[26px] w-auto" />
           </Link>
-          <nav aria-label="Vistas" className="-mb-px flex h-full items-stretch gap-1 overflow-x-auto [scrollbar-width:none]">
+          <nav aria-label="Vistas" className="-mb-px flex h-full min-w-0 items-stretch gap-1 overflow-x-auto [scrollbar-width:none]">
+            <Link href="/" className="relative flex shrink-0 items-center px-3 text-[14px] text-tenue outline-none transition-colors hover:text-texto focus-visible:text-texto">
+              Inicio
+            </Link>
             {VISTAS.map(([k, nombre]) => (
               <button
                 key={k}
