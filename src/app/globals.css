@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+/*
+  Lineamientos de co.addi.com (sitio en Framer), leídos de su CSS el 19 oct 2026.
+  Solo modo claro, como el original.
+*/
+:root {
+  /* Marca */
+  --marca: #0068ff; /* botones y fondos fuertes */
+  --marca-media: #3080ff; /* azul de marca más usado */
+  --marca-logo: #4171ff;
+  --marca-suave: #dbe8ff;
+  --marca-fondo: #f2f7ff;
+
+  /* Neutros */
+  --fondo: #ffffff;
+  --lienzo: #f7f7f7;
+  --superficie: #f2f2f3;
+  --texto: #141415;
+  --texto-secundario: #565657;
+  --tenue: #747476;
+  --borde: #e5e5e6;
+  --linea: rgb(20 20 21 / 0.08);
+
+  /* Acentos del sitio */
+  --menta: #cffffc;
+  --naranja: #ff8f43;
+  --lila: #c5bdf9;
+
+  /* Estados */
+  --exito: #12b76a;
+  --exito-fondo: #e7f8ef;
+  --exito-texto: #0b7a46;
+  --aviso: #f5a524;
+  --aviso-fondo: #fff4e0;
+  --aviso-texto: #8f5600;
+  --error: #f04461;
+  --error-fondo: #fdecef;
+  --error-texto: #b42340;
+
+  /* Sombra en capas del original */
+  --sombra-xs: 0 0.6px 1.1px -1.4px rgb(0 0 0 / 0.2), 0 2.3px 4.1px -2.8px rgb(0 0 0 / 0.17), 0 10px 18px -4.25px rgb(0 0 0 / 0.04);
+  --sombra-md: 0 16px 40px rgb(0 104 255 / 0.1);
+  --anillo-foco: 0 0 0 3px rgb(0 104 255 / 0.22);
+}
+
+@theme inline {
+  --color-marca: var(--marca);
+  --color-marca-media: var(--marca-media);
+  --color-marca-logo: var(--marca-logo);
+  --color-marca-suave: var(--marca-suave);
+  --color-marca-fondo: var(--marca-fondo);
+  --color-fondo: var(--fondo);
+  --color-lienzo: var(--lienzo);
+  --color-superficie: var(--superficie);
+  --color-texto: var(--texto);
+  --color-texto-secundario: var(--texto-secundario);
+  --color-tenue: var(--tenue);
+  --color-borde: var(--borde);
+  --color-linea: var(--linea);
+  --color-menta: var(--menta);
+  --color-naranja: var(--naranja);
+  --color-lila: var(--lila);
+  --color-exito: var(--exito);
+  --color-exito-fondo: var(--exito-fondo);
+  --color-exito-texto: var(--exito-texto);
+  --color-aviso: var(--aviso);
+  --color-aviso-fondo: var(--aviso-fondo);
+  --color-aviso-texto: var(--aviso-texto);
+  --color-error: var(--error);
+  --color-error-fondo: var(--error-fondo);
+  --color-error-texto: var(--error-texto);
+  /* Títulos en Onest sin negrita; texto en Outfit */
+  --font-titulo: var(--font-onest), ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+  --font-mono: var(--font-fragment), ui-monospace, SFMono-Regular, monospace;
+  /* Radios del original: tarjeta 18px, control 8px, bloque grande 32px, píldora */
+  --radius-tarjeta: 18px;
+  --radius-control: 8px;
+  --radius-bloque: 32px;
+  --shadow-xs: var(--sombra-xs);
+  --shadow-md: var(--sombra-md);
+  --ease-addi: cubic-bezier(0.22, 1, 0.36, 1);
+  --animate-entrar: entrar 240ms cubic-bezier(0.22, 1, 0.36, 1);
+  --animate-aparecer: aparecer 160ms ease-out;
+}
+
+@keyframes entrar {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+  }
+}
+
+html {
+  color-scheme: light;
+  background: var(--fondo);
+}
+
+body {
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: var(--font-sans);
+  letter-spacing: -0.006em;
+}
+
+/* Títulos como en co.addi.com: peso 400 e interletrado apretado */
+.titulo {
+  font-family: var(--font-titulo);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.cifra {
+  font-family: var(--font-titulo);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+::selection {
+  background: var(--marca-suave);
+}
