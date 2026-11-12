@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, LifeBuoy, MapPin, ShieldCheck, type LucideIcon } from "lucide-react";
+import { ArrowRight, LifeBuoy, MapPin, type LucideIcon } from "lucide-react";
 import { Tarjeta } from "./piezas";
 
 type Regla = { si: string; entonces: string; nota?: string };
@@ -18,19 +18,11 @@ const COTIDIANA: Regla[] = [
   { si: "Sin respuesta en 7 días", entonces: "Pasa al journey de incentivos", nota: "El que ya existe en Braze" },
 ];
 
-const MEDICION: Regla[] = [
-  { si: "20 % de cada grupo queda en control", entonces: "Compras incrementales", nota: "Tasa con oferta menos tasa del control" },
-  { si: "Lectura semanal", entonces: "Decisión mensual", nota: "Escalar, ajustar o apagar cada oferta" },
-];
-
 export function Reglas() {
   return (
-    <div className="grid gap-5">
+    <div className="grid gap-5 lg:grid-cols-2">
       <Bloque titulo="Rescate en la caja" icono={LifeBuoy} reglas={RESCATE} />
-      <div className="grid gap-5 lg:grid-cols-2">
-        <Bloque titulo="Primera compra cotidiana" icono={MapPin} reglas={COTIDIANA} />
-        <Bloque titulo="Medición" icono={ShieldCheck} reglas={MEDICION} />
-      </div>
+      <Bloque titulo="Compra cotidiana" icono={MapPin} reglas={COTIDIANA} />
     </div>
   );
 }
